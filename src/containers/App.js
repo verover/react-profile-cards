@@ -4,7 +4,7 @@ import Profile from '../components/Profile/Profile'
 
 function App() {
     return(
-        <div className="flex flex-1">
+        <div className="flex flex-auto">
             <Router>
                 <Routes>
                     <Route path="/" name="profile" element={<Profile/>}/>

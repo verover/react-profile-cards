@@ -9,13 +9,13 @@ import {store} from "./features/store"
 
 ReactDOM.render(
   <div className='p-5 sm:p-4 sm:container flex flex-col h-screen justify-between'>
-    <Header/>
     <React.StrictMode>
       <Provider store={store}>
+        <Header/>
         <App/>
+        <Footer/>
       </Provider>
     </React.StrictMode>
-    <Footer/>
   </div>,
   document.getElementById('root')
 );

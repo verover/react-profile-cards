@@ -9,6 +9,15 @@
         font-family: 'Manrope', sans-serif;
     }
     .cards{
-        @apply bg-white bg-opacity-30 sm:my-2 w-full m-0;
+        @apply bg-gray-600 bg-opacity-30 w-full m-0 rounded-lg shadow-inner shadow-gray-400 flex flex-row sm:flex-col justify-start sm:py-3 sm:px-1 px-3 items-center transition ease-in-out delay-200 hover:scale-95 hover:bg-opacity-20;
+    }
+    .btn-primary{
+        @apply border-2 px-2 hover:bg-emerald-700 hover:text-white transition ease-in-out border-teal-800 p-1 rounded-full cursor-pointer
+    }
+    .btn-group{
+        @apply items-center hidden sm:flex flex-row
+    }
+    #refresh:hover .refresh{
+        @apply animate-spin
     }
 }

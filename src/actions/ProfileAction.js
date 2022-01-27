@@ -15,10 +15,10 @@ export const getUserProfile = () => {
             params: {results:8, noinfo:''},
             timeout: API_TIMEOUT
         }).then(response => {
-            dispatch(addProfiles(dispatchSuccess(response.data.results)))
+            return dispatch(addProfiles(dispatchSuccess(response.data.results)))
         }).catch(e => {
-            dispatchError(e.error || "NOT_FOUND")
             console.log('tooslow!');
+            return dispatchError(e.error || "NOT_FOUND")
         });
     }
 }
