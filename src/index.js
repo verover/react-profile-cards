@@ -1,17 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Header from './components/Common/Header'
+import App from './containers/App'
+import Footer from './components/Common/Footer'
+import './scss/style.css'
+import { Provider } from 'react-redux'
+import {store} from "./features/store"
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <div className='p-5 sm:p-4 sm:container flex flex-col h-screen justify-between'>
+    <Header/>
+    <React.StrictMode>
+      <Provider store={store}>
+        <App/>
+      </Provider>
+    </React.StrictMode>
+    <Footer/>
+  </div>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
