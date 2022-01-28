@@ -4,9 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 @layer base{
+    *{
+        font-family: 'Manrope', sans-serif;
+    }
     body {
         @apply bg-stone-300 font-sans;
-        font-family: 'Manrope', sans-serif;
     }
     .cards{
         @apply bg-gray-600 bg-opacity-30 w-full m-0 rounded-lg shadow-inner shadow-gray-400 flex flex-row sm:flex-col justify-start sm:py-3 sm:px-1 px-3 items-center transition ease-in-out delay-200 hover:scale-95 hover:bg-opacity-20;

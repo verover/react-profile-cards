@@ -1,13 +1,22 @@
-import { useSelector } from "react-redux";
-import { getPayload } from "../../features/profile/profileSlice";
+import { useSelector } from "react-redux"
+import { getPayload } from "../../features/profile/profileSlice"
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 
-function ProfileList(state) {
+function ProfileList({profileDetailPrompt}) {
     const payload = useSelector(getPayload)
+    let clicked = null
+    const readDetail = (id) =>{
+        console.log(id);
+        clicked = true
+        console.log(clicked)
+        clicked = false
+        console.log(clicked)
+    }
+
     if(!payload.error){
         const profileData = payload.data
         return profileData.map((profile, index) => (
-            <article className='cards' key={profile.login.uuid}>
+            <article className='cards' key={profile.login.uuid} onClick={() => {profileDetailPrompt(profile.login.uuid)}}>
                 <div>
                     <img alt={profile.name.last} className="resize-none block w-16 sm:w-full max-w-sm rounded-full"
                         src={profile.picture.large} />
